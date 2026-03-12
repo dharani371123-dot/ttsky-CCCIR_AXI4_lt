@@ -10,7 +10,7 @@ Tiny Tapeout is an educational project that aims to make it easier and cheaper t
 
 To learn more and get started, visit https://tinytapeout.com.
 
-## AXI4-Lite Protocol Overview
+## AXI4-Lite Protocol Design Description
 This design implements a self-contained AXI4-Lite master-slave loopback with a 4×8-bit register file. The protocol follows the ARM AMBA AXI4-Lite specification 
 
 ## Set up your Verilog project
