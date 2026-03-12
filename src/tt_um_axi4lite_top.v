@@ -49,8 +49,18 @@ module tt_um_axi4lite_top
      assign write_addr=ui_in[2:1];
      assign read_addr=ui_in[4:3];
      assign start_read=ui_in[5];
-     assign uo_out[0]=done;
-     assign uo_out[7:1]=0;
+     reg [7:0] uo_out_reg;
+
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n)
+        uo_out_reg <= 8'b0;
+    else begin
+        uo_out_reg[0] <= done;
+        uo_out_reg[7:1] <= 7'b0;
+    end
+end
+
+assign uo_out = uo_out_reg;
 
      
     // Expose AXI signals for simulation visibility
